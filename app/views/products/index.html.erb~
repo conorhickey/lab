@@ -10,16 +10,20 @@
     <%= image_tag(product.image_url, class: 'list_image') %>
   </td>
        <td class='list_description'>
-  <dl>
-    <dt><%= product.title %></dt>
+  <dd>
+    <dt><%= product.title %></dt>	
     <dd>
       <%= truncate strip_tags(product.description), length: 240 %>
     </dd>
-  </dl>
+	<dt>€<%= product.price %></dt>
+  </dd>
 </td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<td class='list_actions'>
+  <%= link_to 'Show', product %><br/>
+  <%= link_to 'Edit', edit_product_path(product) %><br/>
+  <%= link_to 'Destroy', product, method: :delete, 
+      data: { confirm: 'Are you sure?' } %>
+</td>
       <% end %>
     <% end %>
   </tbody>
