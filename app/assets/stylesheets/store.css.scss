@@ -1,17 +1,21 @@
 .store {
+
 h1 {
-margin: 0;
-padding-bottom: 0.5em;
-font: 150% sans-serif;
-color: #226;
-border-bottom: 3px dotted #77d;
+  margin: 0;
+  padding-bottom: 0.5em;
+  font: 150% sans-serif;
+  color: #226;
+  border-bottom: 3px dotted #77d;
 }
 
+/* An entry in the store catalog */
 .entry {
   overflow: auto;
   margin-top: 1em;
   border-bottom: 1px dotted #77d;
   min-height: 100px;
+}
+
 img {
   width: 80px;
   margin-right: 5px;
@@ -39,6 +43,4 @@ p, div.price_line {
   font-weight: bold;
   margin-right: 3em;
 }
-}
-
 }
