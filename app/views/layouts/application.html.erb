@@ -23,6 +23,11 @@
 	<div id="time">	
 	<%= Time.now %>
 	</div>
+<% if @cart %>
+  <div id="cart">
+    <%= render @cart %>
+  </div>
+<% end %>
   </div>
   <div id="main">
     <%= yield %>
