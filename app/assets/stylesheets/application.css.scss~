@@ -24,7 +24,7 @@
 
   img {
     position: relative;
-    left: 20px;
+    left: 15px;
   }
 }
 
@@ -47,6 +47,7 @@
   }
 
   #side {
+	
     float: left;
     padding: 1em 2em;
     width: 13em;
@@ -60,8 +61,8 @@
         a {
           color: #bfb;
 	  font-size: small;
-	}
-      }
-    }
-  }
+	  }
+         }
+       }  
+     }
 }
