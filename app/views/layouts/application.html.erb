@@ -23,10 +23,9 @@
 	<div id="time">	
 	<%= Time.now %>
 	</div>
-<% if @cart %>
-  <div id="cart">
-    <%= render @cart %>
-  </div>
+
+<%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+  <%= render @cart %>
 <% end %>
   </div>
   <div id="main">
