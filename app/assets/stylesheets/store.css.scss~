@@ -7,6 +7,9 @@ h1 {
   color: #226;
   border-bottom: 3px dotted #77d;
 }
+img{
+cursor: pointer;
+}
 
 /* An entry in the store catalog */
 .entry {
