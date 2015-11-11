@@ -20,6 +20,7 @@
 	<li><a href="http://www..../news">News</a></li>
 	<li><a href="http://www..../contact">Contact</a></li>
     </ul>
+
 	<div id="time">	
 	<%= Time.now %>
 	</div>
@@ -27,6 +28,18 @@
 <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
   <%= render @cart %>
 <% end %>
+<% if session[:user_id] %>
+  <ul>
+  <li><%= link_to 'Orders',   orders_path   %></li>
+  <li><%= link_to 'Products', products_path %></li>
+  <li><%= link_to 'Users',    users_path    %></li>
+  </ul>
+  <%= button_to 'Logout', logout_path, :method => :delete   %>
+<% end %>
+<br />
+	<div id="time">	
+	<%= Time.now %>
+	</div>
   </div>
   <div id="main">
     <%= yield %>

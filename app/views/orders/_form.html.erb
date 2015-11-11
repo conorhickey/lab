@@ -1,42 +1,33 @@
-<div class="depot_form">
-
-<%= form_for @user do |f| %>
-  <% if @user.errors.any? %>
+<%= form_for(@order) do |f| %>
+  <% if @order.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %>
-        prohibited this user from being saved:</h2>
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
       <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+      <% @order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
-  <fieldset>
-  <legend>Enter User Details</legend>
-
   <div class="field">
-    <%= f.label :name, 'Name:' %>
-    <%= f.text_field :name, size: 40 %>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
   </div>
-
   <div class="field">
-    <%= f.label :password, 'Password:' %>
-    <%= f.password_field :password, size: 40 %>
+    <%= f.label :address %><br>
+    <%= f.text_area :address %>
   </div>
-
-  
   <div class="field">
-    <%= f.label :password_confirmation, 'Confirm:' %>
-    <%= f.password_field :password_confirmation, size: 40 %>
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
   </div>
-
+  <div class="field">
+    <%= f.label :pay_type %><br>
+    <%= f.select :pay_type, Order::PAYMENT_TYPES, prompt: "Select a payment method" %>
+  </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Place Order"%>
   </div>
-
-  </fieldset>
 <% end %>
-
-</div>
